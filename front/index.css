@@ -3,20 +3,26 @@
    ========================================================================== */
 
 :root {
-    --bg-color: #0B0C10;      /* Darkest background */
-    --card-bg: #1F2833;       /* Secondary dark */
-    --text-main: #C5C6C7;     /* Light grey text */
-    --accent: #66FCF1;        /* Bright cyan */
-    --accent-muted: #45A29E;  /* Muted teal */
-    --glass-bg: rgba(31, 40, 51, 0.7); /* Dark frosted glass */
+    --bg-color: #0B0C10;
+    /* Darkest background */
+    --card-bg: #1F2833;
+    /* Secondary dark */
+    --text-main: #C5C6C7;
+    /* Light grey text */
+    --accent: #66FCF1;
+    /* Bright cyan */
+    --accent-muted: #45A29E;
+    /* Muted teal */
+    --glass-bg: rgba(31, 40, 51, 0.7);
+    /* Dark frosted glass */
 }
 
 
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -33,10 +39,84 @@ body {
 }
 
 /* --- Typography --- */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Playfair Display', serif;
     font-weight: 400;
     color: var(--text-main);
+}
+
+/* --- Hero Section Refactor --- */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    /* Space between photo and text */
+    max-width: 1100px;
+    text-align: left;
+    /* Align text to the left */
+}
+
+/* Photo Styling */
+.hero-profile-img {
+    width: 280px;
+    height: 280px;
+    border-radius: 30px;
+    /* Slightly rounded corners for a modern look */
+    object-fit: cover;
+    border: 1px solid var(--accent);
+    box-shadow: 10px 10px 0px -5px var(--card-bg), 10px 10px 0px -4px var(--accent);
+}
+
+/* Text Content Styling */
+.hero-text-content {
+    flex: 1;
+}
+
+.designer-label {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.hero-name {
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+}
+
+.hero-text-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+}
+
+/* Responsive: Stack them on mobile */
+@media (max-width: 850px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-profile-img {
+        width: 200px;
+        height: 200px;
+        box-shadow: 10px 10px 0px -3px var(--accent);
+    }
 }
 
 /* --- Hero Section --- */
@@ -49,13 +129,16 @@ h1, h2, h3 {
     padding: 2rem;
 }
 
-.hero-content { max-width: 700px; }
+.hero-content {
+    max-width: 700px;
+}
 
 .hero-content h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
     line-height: 1.1;
-    color: var(--accent); /* Make the main title pop */
+    color: var(--accent);
+    /* Make the main title pop */
 }
 
 .hero-content p {
@@ -76,7 +159,9 @@ h1, h2, h3 {
     transition: opacity 0.3s;
 }
 
-.scroll-down-btn:hover { opacity: 0.6; }
+.scroll-down-btn:hover {
+    opacity: 0.6;
+}
 
 /* --- CTA / Enter Gallery Section --- */
 .cta-section {
@@ -86,10 +171,12 @@ h1, h2, h3 {
     justify-content: center;
     text-align: center;
     padding: 4rem 2rem;
-    background: rgba(31, 40, 51, 0.4); 
+    background: rgba(31, 40, 51, 0.4);
 }
 
-.cta-content { max-width: 600px; }
+.cta-content {
+    max-width: 600px;
+}
 
 .cta-content h2 {
     font-size: 3rem;
@@ -106,7 +193,8 @@ h1, h2, h3 {
     text-decoration: none;
     background: var(--accent);
     border: 1px solid var(--accent);
-    color: var(--bg-color); /* Dark text on bright button */
+    color: var(--bg-color);
+    /* Dark text on bright button */
     padding: 1rem 3rem;
     border-radius: 30px;
     font-size: 1rem;
@@ -132,7 +220,8 @@ h1, h2, h3 {
     background: var(--glass-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(102, 252, 241, 0.15); /* Subtle cyan border */
+    border: 1px solid rgba(102, 252, 241, 0.15);
+    /* Subtle cyan border */
     border-radius: 24px;
     padding: 4rem;
     max-width: 800px;
